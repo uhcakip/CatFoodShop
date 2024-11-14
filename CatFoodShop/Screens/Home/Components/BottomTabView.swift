@@ -20,6 +20,7 @@ struct BottomTabView: View {
                 }
             }
         }
+        .containerRelativeFrame(.vertical, count: 10, span: 1, spacing: 0)
         .alignment(.bottom)
     }
 
@@ -37,7 +38,13 @@ struct BottomTabView: View {
                     .foregroundStyle(.mochaYellow)
             }
         }
-        .frame(width: isActive ? 150 : 60, height: 60)
+        .containerRelativeFrame([.horizontal, .vertical]) { length, axis in
+            if axis == .horizontal {
+                return length * (isActive ? 0.4 : 0.15)
+            } else {
+                return length * 0.08
+            }
+        }
         .background(isActive ? .mochaBase : .clear)
         .clipShape(.capsule)
     }

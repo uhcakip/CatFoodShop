@@ -10,7 +10,7 @@ import SwiftUI
 struct OfferProductView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
-            .frame(height: 200)
+            .containerRelativeFrame(.vertical, count: 10, span: 3, spacing: 0)
             .foregroundStyle(.mochaCrust)
             .overlay {
                 ZStack {
@@ -18,7 +18,7 @@ struct OfferProductView: View {
                         .resizable()
                         .scaledToFit()
                         .scaleEffect(1.7)
-                        .offset(x: 110, y: 50)
+                        .offset(x: 125, y: 50)
 
                     VStack(alignment: .listRowSeparatorLeading, spacing: 5) {
                         Text("OFFER")
@@ -55,7 +55,7 @@ struct OfferProductView: View {
             }
             .clipped()
             .shadow(radius: 10)
-            .padding(.top, 20)
+            .padding(.top, 10)
     }
 }
 

@@ -20,7 +20,7 @@ struct HomeView: View {
                 ProductListView()
                 BottomTabView()
             }
-            .padding()
+            .padding(.horizontal)
             .alignment(.top)
             .foregroundStyle(.mochaText)
         }

@@ -31,7 +31,7 @@ struct ProductListView: View {
                 }
             }
         }
-        .frame(height: 320)
+        .containerRelativeFrame(.vertical, count: 20, span: 9, spacing: 0)
     }
 
     @ViewBuilder
