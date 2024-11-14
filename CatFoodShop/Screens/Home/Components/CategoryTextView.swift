@@ -13,7 +13,6 @@ struct CategoryTextView: View {
             Text("Cat Food")
                 .font(.title2)
                 .bold()
-                .foregroundStyle(.mochaText)
                 .alignment(.leading)
 
             Button {

@@ -49,7 +49,6 @@ struct OfferProductView: View {
                                 .frame(width: 100, height: 30)
                         }
                     }
-                    .foregroundStyle(.mochaText)
                     .alignment(.leading)
                     .padding()
                 }

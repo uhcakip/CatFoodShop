@@ -91,7 +91,6 @@ struct ProductListView: View {
                             .alignment(.bottom)
                             .offset(y: -10)
                         }
-                        .foregroundStyle(.mochaText)
                         .alignment(.top)
                     }
                 }

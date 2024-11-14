@@ -25,7 +25,6 @@ struct NavbarView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 30, height: 30)
-                .foregroundStyle(.mochaText)
         }
 
     }
