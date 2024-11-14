@@ -14,7 +14,7 @@ struct HomeView: View {
                 .ignoresSafeArea()
 
             VStack {
-                NavbarView()
+                HeaderView()
                 OfferProductView()
                 CategoryTextView()
                 ProductListView()

@@ -1,5 +1,5 @@
 //
-//  NavbarView.swift
+//  HeaderView.swift
 //  CatFoodShop
 //
 //  Created by Yuna Chou on 2024/11/13.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavbarView: View {
+struct HeaderView: View {
     var body: some View {
         HStack {
             item(symbol: "magnifyingglass")
@@ -19,7 +19,7 @@ struct NavbarView: View {
     @ViewBuilder
     private func item(symbol: String) -> some View {
         Button {
-            print("NavbarView: \(symbol) clicked")
+            print("HeaderView: \(symbol) clicked")
         } label: {
             Image(systemName: symbol)
                 .resizable()
@@ -31,5 +31,5 @@ struct NavbarView: View {
 }
 
 #Preview {
-    NavbarView()
+    HeaderView()
 }
