@@ -18,6 +18,7 @@ struct HomeView: View {
                 OfferProductView()
                 CategoryTextView()
                 ProductListView()
+                BottomTabView()
             }
             .padding()
             .alignment(.top)
