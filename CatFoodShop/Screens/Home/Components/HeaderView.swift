@@ -22,11 +22,8 @@ struct HeaderView: View {
             print("HeaderView: \(symbol) clicked")
         } label: {
             Image(systemName: symbol)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 30, height: 30)
+                .font(.system(size: 20))
         }
-
     }
 }
 

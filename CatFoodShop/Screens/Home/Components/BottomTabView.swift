@@ -27,9 +27,7 @@ struct BottomTabView: View {
     private func tabItem(item: TabItem, isActive: Bool) -> some View {
         HStack {
             Image(systemName: item.symbol)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 20, height: 20)
+                .font(.system(size: 20))
                 .foregroundStyle(isActive ? .mochaYellow : .mochaText)
 
             if isActive {
