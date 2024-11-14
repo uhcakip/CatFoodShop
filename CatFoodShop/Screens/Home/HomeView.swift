@@ -16,6 +16,8 @@ struct HomeView: View {
             VStack {
                 NavbarView()
                 OfferProductView()
+                CategoryTextView()
+                ProductListView()
             }
             .padding()
             .alignment(.top)
