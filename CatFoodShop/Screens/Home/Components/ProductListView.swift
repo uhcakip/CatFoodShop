@@ -24,11 +24,9 @@ struct ProductListView: View {
     ]
 
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyHStack {
-                ForEach(products) { product in
-                    card(product: product)
-                }
+        HStack {
+            ForEach(products) { product in
+                card(product: product)
             }
         }
         .containerRelativeFrame(.vertical, count: 20, span: 9, spacing: 0)
@@ -40,7 +38,6 @@ struct ProductListView: View {
             print("ProductListView: \(product.name) clicked")
         } label: {
             Rectangle()
-                .containerRelativeFrame(.horizontal, count: 2, spacing: 10)
                 .foregroundStyle(.mochaCrust)
                 .overlay {
                     VStack {

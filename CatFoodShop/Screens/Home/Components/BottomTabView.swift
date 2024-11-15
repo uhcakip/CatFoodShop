@@ -13,10 +13,12 @@ struct BottomTabView: View {
     var body: some View {
         HStack {
             ForEach(TabItem.allCases, id: \.self) { item in
-                tabItem(item: item, isActive: selectedItem == item.rawValue)
-                    .onTapGesture {
-                        selectedItem = item.rawValue
-                    }
+                Button {
+                    print("BottomTabView: \(item) clicked")
+                    selectedItem = item.rawValue
+                } label: {
+                    tabItem(item: item, isActive: selectedItem == item.rawValue)
+                }
             }
         }
         .containerRelativeFrame(.vertical, count: 10, span: 1, spacing: 0)
@@ -41,12 +43,11 @@ struct BottomTabView: View {
             if axis == .horizontal {
                 return length * (isActive ? 0.4 : 0.15)
             } else {
-                return length * 0.06
+                return length * 0.08
             }
         }
         .background(isActive ? .mochaBase : .clear)
         .clipShape(.capsule)
-        .animation(.easeInOut, value: isActive)
     }
 }
 
