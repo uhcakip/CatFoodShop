@@ -9,6 +9,16 @@ import SwiftUI
 
 struct BottomTabView: View {
     @State var selectedItem = 1
+    private let activeStyle = (
+        textColor: Color.mochaYellow,
+        width: 0.4,
+        backgroundColor: Color.mochaBase
+    )
+    private let inactiveStyle = (
+        textColor: Color.mochaText,
+        width: 0.15,
+        backgroundColor: Color.clear
+    )
 
     var body: some View {
         HStack {
@@ -27,26 +37,28 @@ struct BottomTabView: View {
 
     @ViewBuilder
     private func tabItem(item: TabItem, isActive: Bool) -> some View {
+        let style = isActive ? activeStyle : inactiveStyle
+
         HStack {
             Image(systemName: item.symbol)
                 .font(.system(size: 20))
-                .foregroundStyle(isActive ? .mochaYellow : .mochaText)
+                .foregroundStyle(style.textColor)
 
             if isActive {
                 Text(item.title)
                     .font(.title3)
                     .bold()
-                    .foregroundStyle(.mochaYellow)
+                    .foregroundStyle(style.textColor)
             }
         }
         .containerRelativeFrame([.horizontal, .vertical]) { length, axis in
             if axis == .horizontal {
-                return length * (isActive ? 0.4 : 0.15)
+                return length * style.width
             } else {
                 return length * 0.08
             }
         }
-        .background(isActive ? .mochaBase : .clear)
+        .background(style.backgroundColor)
         .clipShape(.capsule)
     }
 }
