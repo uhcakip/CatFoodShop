@@ -9,20 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ZStack {
-            Color.mochaSurface
-                .ignoresSafeArea()
-
-            VStack {
-                HeaderView()
-                OfferProductView()
-                CategoryTextView()
-                ProductListView()
-                BottomTabView()
-            }
-            .padding(.horizontal)
-            .alignment(.top)
-            .foregroundStyle(.mochaText)
+        RootView {
+            OfferProductView()
+            CategoryTextView()
+            ProductListView()
         }
     }
 }
