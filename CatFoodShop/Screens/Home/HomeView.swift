@@ -15,13 +15,14 @@ struct HomeView: View {
             Color.mochaSurface
                 .ignoresSafeArea()
 
-            VStack {
-                // FIXME: Views are pushed up when the keyboard appears
-                HeaderView(isSearching: $isSearching)
-                OfferProductView()
-                CategoryTextView()
-                ProductListView()
-                BottomTabView()
+            ScrollView {
+                VStack {
+                    HeaderView(isSearching: $isSearching)
+                    OfferProductView()
+                    CategoryTextView()
+                    ProductListView()
+                    BottomTabView()
+                }
             }
             .padding(.horizontal)
             .alignment(.top)
