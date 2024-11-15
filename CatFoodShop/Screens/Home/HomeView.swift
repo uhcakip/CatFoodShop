@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
+    @FocusState private var isSearching
+
     var body: some View {
         ZStack {
             Color.mochaSurface
                 .ignoresSafeArea()
 
             VStack {
-                HeaderView()
+                // FIXME: Views are pushed up when the keyboard appears
+                HeaderView(isSearching: $isSearching)
                 OfferProductView()
                 CategoryTextView()
                 ProductListView()
@@ -23,6 +26,9 @@ struct HomeView: View {
             .padding(.horizontal)
             .alignment(.top)
             .foregroundStyle(.mochaText)
+        }
+        .onTapGesture {
+            isSearching = false
         }
     }
 }
